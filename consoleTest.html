@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Console Tests</title>
+    </head>
+    <body>
+        <script>
+
+            let string = 'r a, c,ec ar!';
+
+            let noPuncStr = string.replace(/\W/g, "");
+            console.log(noPuncStr);
+
+            let splitString = noPuncStr.split('');
+
+            let reverseString = '';
+            for (let i = splitString.length - 1; i >= 0; i--) {
+                reverseString += splitString[i];
+            }
+            console.log(reverseString.toUpperCase() === noPuncStr.toUpperCase());
+
+        </script>
+    </body>
+</html>
