@@ -7,18 +7,40 @@
     <body>
         <script>
 
-            let string = 'r a, c,ec ar!';
+            const people = [
+                {
+                    name: "Carly",
+                    yearOfBirth: 1942,
+                    yearOfDeath: 1970,
+                },
+                {
+                    name: "Ray",
+                    yearOfBirth: 1962,
+                    yearOfDeath: 2011,
+                },
+                {
+                    name: "Jane",
+                    yearOfBirth: 1912,
+                    yearOfDeath: 1941,
+                },
+                ]
 
-            let noPuncStr = string.replace(/\W/g, "");
-            console.log(noPuncStr);
-
-            let splitString = noPuncStr.split('');
-
-            let reverseString = '';
-            for (let i = splitString.length - 1; i >= 0; i--) {
-                reverseString += splitString[i];
+            function findTheOldest(people) {
+                let oldestPerson = people[0];
+                console.log(oldestPerson);
+                people.forEach(person => {
+                    let currentAge = person.yearOfDeath - person.yearOfBirth;
+                    let oldestAge = oldestPerson.yearOfDeath - oldestPerson.yearOfBirth;
+                    console.log(currentAge);
+                    console.log(oldestAge)
+                    if (oldestAge < currentAge) {
+                        oldestPerson = person;
+                    }
+                    console.log(oldestPerson);
+                });
+                console.log(oldestPerson);
             }
-            console.log(reverseString.toUpperCase() === noPuncStr.toUpperCase());
+            findTheOldest(people);
 
         </script>
     </body>
